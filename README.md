@@ -11,8 +11,8 @@ Acesse aqui a [apresentação](https://docs.google.com/presentation/d/1T5lvg562a
 Para executar o projeto em sua máquina local:
 
 ```shell script
-git clone https://github.com/app-masters-academy/code-instagram-clone.git
-cd code-instagram-clone
+git clone https://github.com/ResendiK2/treinamento-clone-instagram.git
+cd treinamento-clone-instagram
 yarn install
 yarn start
 ```
