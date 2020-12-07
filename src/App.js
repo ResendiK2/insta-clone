@@ -1,7 +1,7 @@
-import logo from './logo.png';
 import './App.css';
-import Footer from "./components/Footer";
-import PostList from "./components/PostList";
+import Footer from "./footer";
+import PostList from "./postList";
+import Header from './header';
 
 const posts = [
     {
@@ -13,7 +13,7 @@ const posts = [
     {
         userName: "Igor Sasaoka",
         imageUserUrl: "https://media-exp1.licdn.com/dms/image/C4E03AQHl4Nw0ESXmAA/profile-displayphoto-shrink_800_800/0?e=1612396800&v=beta&t=oCRHXfEjNLrIDz2BZBvDEREmcv3gjjPAdar02VgdprA",
-        imageUrl: "https://m.campuse.ro/archives/profile_photos/2018/09/18/616693-1014796373.jpg",
+        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrXUG_m00N9MO2n29txza4EKbi9bRk3DXcMdMa-bZ4M7Ydtkf4jZLy_Vv_e3ONnZgQp6P5cRyanh_bnJljD3Y46hI-KAt2vJWxfg&usqp=CAU&ec=45732301",
         imageDescription: "Salve quase todos"
     },
     {
@@ -34,10 +34,7 @@ function App() {
     return (
         <div className="App">
 
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Code Instagram Clone</p>
-            </header>
+            <Header />
 
             {hasPosts ?
                 <PostList posts={posts} />
