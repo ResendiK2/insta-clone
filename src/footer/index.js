@@ -1,10 +1,11 @@
 import styles from './styles.module.css';
 
-function Footer() {
+function Footer(props) {
+  console.log(props);
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <strong>Gabriel Resende</strong>
+        <strong>Gabriel</strong>
         <a
           href='https://appmasters.io/'
           target='_blank'
