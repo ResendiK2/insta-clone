@@ -6,7 +6,11 @@ const Avatar = (props) => {
     return (
         <div className={styles.content}>
             <div className={styles.background}>
-                <img src={props.imageUserUrl} className={styles.image} />
+                <img
+                    src={props.imageUserUrl}
+                    className={styles.image}
+                    alt={"post-image" + props.imageTitle}
+                />
             </div>
 
             <div>

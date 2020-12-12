@@ -1,7 +1,10 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/alt-text */
 
 import styles from './styles.module.css';
+
+import { Link } from "react-router-dom";
 
 import { FaTimes } from "@react-icons/all-files/fa/FaTimes";
 import { FaTimesCircle } from "@react-icons/all-files/fa/FaTimesCircle";
@@ -10,6 +13,7 @@ import { FaRegHeart } from "@react-icons/all-files/fa/FaRegHeart";
 import { FaHome } from "@react-icons/all-files/fa/FaHome";
 import { FaRegPaperPlane } from "@react-icons/all-files/fa/FaRegPaperPlane";
 import { FaRegCompass } from "@react-icons/all-files/fa/FaRegCompass";
+import { FaRegPlusSquare } from "@react-icons/all-files/fa/FaRegPlusSquare";
 
 function Header() {
     function logout() {
@@ -37,9 +41,20 @@ function Header() {
 
                 <div className={styles.icons}>
                     <FaHome size={23} />
+
                     <FaRegPaperPlane size={23} />
+
+                    <Link
+                        to="/post"
+                        className={styles.postButton}
+                    >
+                        <FaRegPlusSquare size={23} color="black" />
+                    </Link>
+
                     <FaRegCompass size={23} />
+
                     <FaRegHeart size={23} />
+
                     <div className={styles.background}>
                         <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHl4Nw0ESXmAA/profile-displayphoto-shrink_800_800/0?e=1612396800&v=beta&t=oCRHXfEjNLrIDz2BZBvDEREmcv3gjjPAdar02VgdprA" className={styles.image} />
                     </div>
