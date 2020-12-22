@@ -8,7 +8,8 @@ function Footer(props) {
     <footer className={styles.footer}>
       <div className={styles.container}>
 
-        <strong>{userName}</strong>
+        <strong className={styles.name}>{userName}</strong>
+
         <a
           href='https://appmasters.io/'
           target='_blank'

@@ -7,6 +7,8 @@ import styles from './styles.module.css';
 import Header from '../header/index';
 import Footer from '../footer/index';
 
+import AvatarNone from '../../public/avatar-none.png';
+
 import { FaArrowLeft } from "@react-icons/all-files/fa/FaArrowLeft";
 
 import { Link } from "react-router-dom";
@@ -20,6 +22,8 @@ const PostForm = () => {
 
     const [error, setError] = useState();
     const [loading, setLoading] = useState(false);
+
+    const userName = localStorage.getItem("userName");
 
     const handlePost = async () => {
         const body = {
@@ -46,14 +50,18 @@ const PostForm = () => {
 
             <main className={styles.content}>
                 <div className={styles.form}>
-                    <Link
-                        to="/"
-                        className={styles.buttonBack}
-                    >
-                        <FaArrowLeft size={23} color="black"
-                        />
-                    </Link>
-                    <h1>Post Form</h1>
+                    <div className={styles.header}>
+                        <Link
+                            to="/"
+                            className={styles.buttonBack}
+                        >
+                            <FaArrowLeft size={20} color="black"
+                            />
+                        </Link>
+                        <div className={styles.title}>
+                            <h2>Post Form</h2>
+                        </div>
+                    </div>
                     <input
                         className={styles.input}
                         placeholder="Título"
@@ -75,12 +83,31 @@ const PostForm = () => {
                         disabled={loading}
                         onChange={(event) => setImageUrl(event.target.value)}
                     />
-                    {imageUrl && imageUrl.length > 5 && (
-                        <img
-                            src={imageUrl}
-                            className={styles.image}
-                        />
-                    )}
+                    <div className={styles.example}>
+                        <div className={styles.headerExample}>
+                            <img
+                                src={AvatarNone}
+                                className={styles.avatarImage}
+                            />
+
+                            <p className={styles.description}><b>{userName}</b></p>
+                        </div>
+                        <div className={styles.imageContainer}>
+                            {imageUrl && imageUrl.length > 5 && (
+                                <img
+                                    src={imageUrl}
+                                    className={styles.image}
+                                />
+                            )}
+                        </div>
+                        <div className={styles.descriptionBox}>
+                            {description && (
+                                <div className={styles.descriptionBoxIf}>
+                                    <p className={styles.description} ><b>{userName}: </b>{description}</p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
                     {error && <p>{error}</p>}
                     <button
                         disabled={loading}

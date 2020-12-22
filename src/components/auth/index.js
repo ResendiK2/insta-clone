@@ -3,6 +3,7 @@ import React from "react";
 
 import styles from './styles.module.css';
 
+import { FaTimesCircle } from "@react-icons/all-files/fa/FaTimesCircle";
 class AuthView extends React.Component {
   constructor() {
     super();
@@ -59,7 +60,7 @@ class AuthView extends React.Component {
           >
             Entrar
         </button>
-          {this.props.error && <p>{this.props.error}</p>}
+          {this.props.error && <div className={styles.errorBox}> <FaTimesCircle size="18" color=" rgb(211, 64, 64)" /> <p className={styles.errorMessage}>{this.props.error}</p></div>}
         </div>
       </main >
     );

@@ -32,28 +32,30 @@ const Comment = props => {
 
   return (
     <div className={styles.comment}>
-      <FaRegComment size={18} color="rgb(170, 170, 170)" />
-      <input
-        className={styles.input}
-        type={'text'}
-        placeholder="Comentar agora"
-        value={text}
-        onChange={event => setText(event.target.value)}
-        disabled={loading}
-      />
-      <button
-        onClick={handleComment}
-        /* Logica para não aceitar comentarios sem conteudo e ficar
-         desabilitado quando o comentario estiver sendo enviado */
-        disabled={loading || !text}
+      <div className={styles.content}>
+        <FaRegComment size={18} color="rgb(170, 170, 170)" />
+        <input
+          className={styles.input}
+          type={'text'}
+          placeholder="Comentar agora"
+          value={text}
+          onChange={event => setText(event.target.value)}
+          disabled={loading}
+        />
+        <button
+          onClick={handleComment}
+          /* Logica para não aceitar comentarios sem conteudo e ficar
+           desabilitado quando o comentario estiver sendo enviado */
+          disabled={loading || !text}
 
-        /* Logica para o botão ficar habilitado para comentarios 
-        apenas quando este tiver conteudo para ser postado */
-        className={text ? classNames(styles.button) : classNames(styles.buttonDisable)}
+          /* Logica para o botão ficar habilitado para comentarios 
+          apenas quando este tiver conteudo para ser postado */
+          className={text ? classNames(styles.button) : classNames(styles.buttonDisable)}
 
-      >
-        Enviar
+        >
+          Enviar
       </button>
+      </div>
     </div>
   );
 };

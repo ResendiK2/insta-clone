@@ -2,14 +2,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 98.5%;
-  height: 50px;
-  padding: 5px;
+  width: 100%;
+  height: 4rem;
   border-bottom: 1px solid lightgrey;
 }
 
 .background {
-  margin-right: 2%;
+  margin: 1rem 0.5rem 1rem 0.4rem;
   display: flex;
   justify-content: center;
   align-items: center;

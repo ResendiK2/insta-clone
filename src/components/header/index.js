@@ -78,11 +78,17 @@ function Header() {
 
                     </Link>
                     {/* Icones estaticos, meramente decorativos */}
-                    <FaRegPaperPlane size={23} color="rgb(190, 190, 190)" />
+                    <div className={styles.decoration}>
+                        <FaRegPaperPlane size={23} color="rgb(190, 190, 190)" />
+                    </div>
 
-                    <FaRegCompass size={23} color="rgb(190, 190, 190)" />
+                    <div className={styles.decoration}>
+                        <FaRegCompass size={23} color="rgb(190, 190, 190)" />
+                    </div>
 
-                    <FaRegHeart size={23} color="rgb(190, 190, 190)" />
+                    <div className={styles.decoration}>
+                        <FaRegHeart size={23} color="rgb(190, 190, 190)" />
+                    </div>
 
                     {/*                     <div className={styles.background}>
                         <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHl4Nw0ESXmAA/profile-displayphoto-shrink_800_800/0?e=1612396800&v=beta&t=oCRHXfEjNLrIDz2BZBvDEREmcv3gjjPAdar02VgdprA" className={styles.image} />

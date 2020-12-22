@@ -7,14 +7,6 @@
   background-color: white;
 }
 
-.avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 100%;
-  object-fit: cover;
-  margin-right: 16px;
-}
-
 .imageContainer {
   border-bottom: 1px solid rgba(219, 219, 219);
 }
@@ -40,9 +32,15 @@
   align-items: center;
   flex-direction: row;
   text-align: justify;
-  width: 684px;
-  padding: 8px 8px 8px 8px;
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-top: 1px solid rgba(219, 219, 219);
+}
+
+.commentsText {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .moreComments {

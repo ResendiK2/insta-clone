@@ -5,6 +5,8 @@ import Footer from "../footer/index";
 import PostList from "../postList/index";
 import Header from '../header/index';
 
+import styles from './styles.module.css';
+
 import { API } from "../../api";
 
 function Home(props) {
@@ -31,7 +33,15 @@ function Home(props) {
 
             <Header posts={posts} />
 
-            { !loading ? <PostList posts={posts} /> : <p>Carregando...</p>}
+            { !loading ?
+
+                <PostList posts={posts} />
+
+                :
+                <div className={styles.boxLoading}>
+                    <p>Carregando...</p>
+                </div>
+            }
 
             {error && <p>{error}</p>}
 

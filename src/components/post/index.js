@@ -63,11 +63,13 @@ const Post = (props) => {
           {comments.slice(0, commentQuantity).map((comment) => {
             return (
               <div className={styles.comments}>
-                <small
-                  key={comment.id}
-                >
-                  {comment.text}
-                </small>
+                <div className={styles.commentsText}>
+                  <small
+                    key={comment.id}
+                  >
+                    {comment.text}
+                  </small>
+                </div>
               </div>
             )
           })}
