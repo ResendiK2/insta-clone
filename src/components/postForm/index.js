@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import { API } from "../../api";
 
 import styles from './styles.module.css';
+import Header from '../header/index';
+import Footer from '../footer/index';
 
 import { FaArrowLeft } from "@react-icons/all-files/fa/FaArrowLeft";
 
@@ -39,53 +41,60 @@ const PostForm = () => {
     };
 
     return (
-        <main className={styles.content}>
-            <div className={styles.form}>
-                <Link
-                    to="/"
-                    className={styles.buttonBack}
-                >
-                    <FaArrowLeft size={23} color="black"
+        <>
+            <Header />
+
+            <main className={styles.content}>
+                <div className={styles.form}>
+                    <Link
+                        to="/"
+                        className={styles.buttonBack}
+                    >
+                        <FaArrowLeft size={23} color="black"
+                        />
+                    </Link>
+                    <h1>Post Form</h1>
+                    <input
+                        className={styles.input}
+                        placeholder="Título"
+                        value={title}
+                        disabled={loading}
+                        onChange={(event) => setTitle(event.target.value)}
                     />
-                </Link>
-                <h1>Post Form</h1>
-                <input
-                    className={styles.input}
-                    placeholder="Título"
-                    value={title}
-                    disabled={loading}
-                    onChange={(event) => setTitle(event.target.value)}
-                />
-                <input
-                    className={styles.input}
-                    placeholder="Mensagem"
-                    value={description}
-                    disabled={loading}
-                    onChange={(event) => setDescription(event.target.value)}
-                />
-                <input
-                    className={styles.input}
-                    placeholder="Url da Imagem"
-                    value={imageUrl}
-                    disabled={loading}
-                    onChange={(event) => setImageUrl(event.target.value)}
-                />
-                {imageUrl && imageUrl.length > 5 && (
-                    <img
-                        src={imageUrl}
-                        className={styles.image}
+                    <input
+                        className={styles.input}
+                        placeholder="Mensagem"
+                        value={description}
+                        disabled={loading}
+                        onChange={(event) => setDescription(event.target.value)}
                     />
-                )}
-                {error && <p>{error}</p>}
-                <button
-                    disabled={loading}
-                    className={styles.buttonSend}
-                    onClick={handlePost}
-                >
-                    Postar
-            </button>
-            </div>
-        </main>
+                    <input
+                        className={styles.input}
+                        placeholder="Url da Imagem"
+                        value={imageUrl}
+                        disabled={loading}
+                        onChange={(event) => setImageUrl(event.target.value)}
+                    />
+                    {imageUrl && imageUrl.length > 5 && (
+                        <img
+                            src={imageUrl}
+                            className={styles.image}
+                        />
+                    )}
+                    {error && <p>{error}</p>}
+                    <button
+                        disabled={loading}
+                        className={styles.buttonSend}
+                        onClick={handlePost}
+                    >
+                        Postar
+                    </button>
+                </div>
+            </main>
+
+            <Footer />
+
+        </>
     );
 };
 

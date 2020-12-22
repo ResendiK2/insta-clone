@@ -2,11 +2,15 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/alt-text */
 
+import { useState } from "react";
+
 import styles from './styles.module.css';
 
 import { Link } from "react-router-dom";
 
-import { FaTimes } from "@react-icons/all-files/fa/FaTimes";
+import Avatar from './../avatar';
+
+import { FaDoorOpen } from "@react-icons/all-files/fa/FaDoorOpen";
 import { FaTimesCircle } from "@react-icons/all-files/fa/FaTimesCircle";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 import { FaRegHeart } from "@react-icons/all-files/fa/FaRegHeart";
@@ -15,49 +19,75 @@ import { FaRegPaperPlane } from "@react-icons/all-files/fa/FaRegPaperPlane";
 import { FaRegCompass } from "@react-icons/all-files/fa/FaRegCompass";
 import { FaRegPlusSquare } from "@react-icons/all-files/fa/FaRegPlusSquare";
 
+import logo from "../../public/logo.png";
+
 function Header() {
+
+    const [search, setSearch] = useState();
+
     function logout() {
         localStorage.clear();
         window.location.reload();
     }
+
     return (
         <header className={styles.header}>
             <div className={styles.container}>
 
                 <div className={styles.logoContainer}>
                     <img
-                        src={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"}
+                        src={logo}
                         className={styles.logo}
                     />
                 </div>
 
                 <div className={styles.search}>
                     <FaSearch size="15" />
-                    <input className={styles.input} type={'text'} placeholder={"Pesquisar"} />
-                    <button className={styles.searchButton}>
-                        <FaTimesCircle size="15" color="rgb(78, 77, 77)" />
+                    <input
+                        className={styles.input}
+                        disabled={true}
+                        type={'text'}
+                        placeholder={"Pesquisar"}
+                        value={search}
+                        onChange={(event) => setSearch(event.target.value)}
+                    />
+                    <button
+                        className={styles.searchButton}
+                        onClick={() => setSearch('')}
+                    >
+                        <FaTimesCircle size="15" color="rgb(190, 190, 190)" />
                     </button>
                 </div>
 
                 <div className={styles.icons}>
-                    <FaHome size={23} />
+                    <Link
+                        to="/"
+                        className={styles.postButton}
+                    >
 
-                    <FaRegPaperPlane size={23} />
+                        <FaHome size={23} color="black" />
+
+                    </Link>
 
                     <Link
                         to="/post"
                         className={styles.postButton}
                     >
+
                         <FaRegPlusSquare size={23} color="black" />
+
                     </Link>
+                    {/* Icones estaticos, meramente decorativos */}
+                    <FaRegPaperPlane size={23} color="rgb(190, 190, 190)" />
 
-                    <FaRegCompass size={23} />
+                    <FaRegCompass size={23} color="rgb(190, 190, 190)" />
 
-                    <FaRegHeart size={23} />
+                    <FaRegHeart size={23} color="rgb(190, 190, 190)" />
 
-                    <div className={styles.background}>
+                    {/*                     <div className={styles.background}>
                         <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHl4Nw0ESXmAA/profile-displayphoto-shrink_800_800/0?e=1612396800&v=beta&t=oCRHXfEjNLrIDz2BZBvDEREmcv3gjjPAdar02VgdprA" className={styles.image} />
-                    </div>
+                    </div> */}
+
                 </div>
 
                 <div className={styles.buttonLogout}>
@@ -65,7 +95,7 @@ function Header() {
                         className={styles.logout}
                         onClick={() => logout()}
                     >
-                        <FaTimes />
+                        <FaDoorOpen size={18} />
                     </button>
                 </div>
             </div>

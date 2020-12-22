@@ -7,7 +7,7 @@ import Header from '../header/index';
 
 import { API } from "../../api";
 
-function Home() {
+function Home(props) {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
     const [posts, setPosts] = useState([]);
@@ -17,6 +17,7 @@ function Home() {
         API.get("/posts")
             .then((response) => {
                 setPosts(response.data);
+
                 setLoading(false);
             })
             .catch((apiError) => {
@@ -28,9 +29,10 @@ function Home() {
     return (
         <div className="App">
 
-            <Header />
+            <Header posts={posts} />
 
             { !loading ? <PostList posts={posts} /> : <p>Carregando...</p>}
+
             {error && <p>{error}</p>}
 
             <Footer />

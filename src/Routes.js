@@ -1,10 +1,12 @@
+/* eslint-disable no-const-assign */
+
 import { useState } from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import AuthView from "./components/auth/index";
 import Home from "./components/home/index";
 import PostForm from "./components/postForm/index";
 
-import { API, setAuthToken } from "./api";
+import { API, setAuthToken, setUserName } from "./api";
 
 const PrivateRoutes = (props) => {
     return (
@@ -33,6 +35,7 @@ const PublicRoutes = (props) => {
                     handleLogin={(user) => {
                         if (user && user.password) {
                             setLoading(true);
+                            setUserName(user.name)
                             API.post("/users/login", user)
                                 .then((response) => {
                                     setAuthToken(response.data.token);
@@ -58,11 +61,11 @@ const Routes = (props) => {
 
     return (
         <BrowserRouter>
-            {isLogged ? (
-                <PrivateRoutes />
-            ) : (
-                    <PublicRoutes setIsLogged={setIsLogged} />
-                )}
+            {isLogged ?
+                (<PrivateRoutes />)
+                :
+                (<PublicRoutes setIsLogged={setIsLogged} />)
+            }
         </BrowserRouter>
     );
 }

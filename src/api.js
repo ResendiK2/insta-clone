@@ -19,3 +19,9 @@ export const setAuthToken = (token) => {
   // Definir o padrão do axios (header)
   API.defaults.headers.common["Authorization"] = authToken;
 };
+
+export const setUserName = (username) => {
+  const userName = username;
+  // Salvar o token no localStorage
+  localStorage.setItem("userName", userName);
+};
