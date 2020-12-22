@@ -48,6 +48,7 @@ class AuthView extends React.Component {
             className={styles.input}
             placeholder="Senha"
             disabled={this.props.loading}
+            type="password"
             onChange={(event) => this.handleChange("password", event)}
             value={this.state.password}
           />

@@ -1,0 +1,77 @@
+.post {
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(219, 219, 219);
+  background-color: white;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.imageContainer {
+  border-bottom: 1px solid rgba(219, 219, 219);
+}
+
+.image {
+  max-width: 100%;
+}
+
+.imageDescription {
+  text-align: justify;
+  margin-bottom: 10px;
+  padding: 0.2rem 0.6rem 0.1rem 0.6rem;
+}
+
+.commentsTitle {
+  margin-bottom: 1vh;
+  font-size: 14px;
+  color: rgb(175, 175, 175)
+}
+
+.comments {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: justify;
+  width: 684px;
+  padding: 8px 8px 8px 8px;
+  border-top: 1px solid rgba(219, 219, 219);
+}
+
+.moreComments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8px 8px 8px 8px;
+  border-top: 1px solid rgba(219, 219, 219);
+}
+
+.moreCommentsButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: transparent;
+  border: 1px solid #67bdf7;
+}
+
+.moreCommentsDescription {
+  margin-top: 1%;
+  color:rgb(150, 150, 150);
+  font-size:12px;
+}
+
+.footer {
+  width: 100%;
+  border-top: 1px solid rgba(219, 219, 219);
+}
